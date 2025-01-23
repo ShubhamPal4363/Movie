@@ -1,0 +1,180 @@
+/* Glassmorphism style for the nav container */
+.glass-nav {
+    background: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(11px);
+    -webkit-backdrop-filter: blur(11px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    /* padding-bottom: 5.5rem; */
+    padding-top: 1rem;
+    margin-top: 1rem;
+}
+ 
+.nav-item a {
+    text-transform: capitalize;
+    margin-bottom: 0px;
+    font-size: 1.39rem;
+    color: black;
+}
+  
+.account-link {
+    text-decoration: none;
+    color: black;
+    font-size: 1.3rem;
+}
+
+/* Home.js Styles */
+.search-user .search #search-data {
+    width: 15rem;
+    height: 2.35rem;
+    position: relative;
+}
+
+.search-user .search .search-icon {
+    width: 1.5rem;
+    position: absolute;
+    transform: translateX(-2rem);
+    top: 1.9rem;
+}
+
+.user h5 {
+    font-size: 1.5rem;
+}
+
+.see-more {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.see-more h5 {
+    margin-bottom: 0px;
+    text-transform: capitalize;
+    font-size: 2rem;
+}
+
+.see-more a {
+    text-decoration: none;
+    text-transform: capitalize;
+    font-size: 1.25rem;
+    color: black;
+}
+
+.movie {
+    width: 25%;
+    position: relative;
+}
+
+.movie .movie-img {
+    width: 100%;
+    border-radius: 20px;
+}
+
+.movie .like-icon {
+    position: absolute;
+    transform: translate(-3rem, 1rem);
+}
+
+.movie-details ul {
+    list-style-type: none;
+    padding-left: 0px;
+}
+
+.movie-details ul li:nth-child(1) {
+    font-size: 2rem;
+}
+
+.movie-details ul li:nth-child(2) {
+    font-size: 1.3rem;
+}
+
+.movie-details ul li:nth-child(3) {
+    font-size: 1.2rem;
+}
+
+.movie-details ul li:nth-child(4) {
+    font-size: 1.15rem;
+}
+
+.rating .rating-star {
+    align-items: center;
+}
+
+.rating .rating-star h5 {
+    font-size: 1.55rem;
+}
+
+.movie-details p {
+    font-size: 1.2rem;
+}
+
+.cast-details h2 {
+    text-transform: uppercase;
+    font-size: 2.5rem;
+    border-bottom: 5px solid black;
+}
+
+.cast-card h4 {
+    font-size: 1.15rem;
+}
+
+.cast-card h5 {
+    font-size: 1.15rem;
+}
+
+@media (max-width: 768px) {
+    nav {
+        position: relative;
+    }
+
+    .glass-nav {
+        position: absolute;
+        top: 3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-item a {
+        font-size: 1rem;
+    }
+
+    .movie-details ul li:nth-child(1) {
+        font-size: 1.8rem;
+    }
+    
+    .movie-details ul li:nth-child(2) {
+        font-size: 1.25rem;
+    }
+    
+    .movie-details ul li:nth-child(3) {
+        font-size: 1.15rem;
+    }
+    
+    .movie-details ul li:nth-child(4) {
+        font-size: 1rem;
+    }
+
+    .rating .rating-star h5 {
+        font-size: 1.35rem;
+    }
+    
+    .movie-details p {
+        font-size: 1rem;
+    }
+    
+    .cast-details h2 {
+        text-transform: uppercase;
+        font-size: 2.5rem;
+        border-bottom: 5px solid black;
+    }
+    
+    .cast-card h4 {
+        font-size: 1rem;
+    }
+    
+    .cast-card h5 {
+        font-size: 1rem;
+    }
+}
+  
