@@ -35,7 +35,7 @@ function Home() {
       fetch(`https://api.themoviedb.org/3/movie/upcoming?api_key=${api}&language=en-US&page=1`)
       .then(res=>res.json())
       .then(json=>{
-        // console.log(json.results)
+        console.log(json.results)
         setUpData(json.results)
       })
   }, [])
@@ -63,10 +63,12 @@ function Home() {
           <input className='rounded ps-3' type="text" name="search" id="search-data" value={searchQuery} onChange={handleSearchChange} placeholder="Search for movies..." />
           <img className='search-icon img-fluid' src={Search} alt="search-icon" />
         </div>
+        <Link className='text-decoration-none text-black' to="/sign-up">
         <div className="user d-flex gap-2 align-items-center">
-          <h5 className='mb-0'>Ajay</h5>
+          <h5 className='mb-0 text-capitalize'>sign up</h5>
           <img className='img-fluid' src={User} alt="user-icon" />
         </div>
+        </Link>
       </div>
 
       {searchQuery && searchResults.length > 0 && (
@@ -102,7 +104,6 @@ function Home() {
                     <Link to={"/detail/" + movie.id}>
                       <img className='img-fluid movie-img' src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt="movie-images" />
                     </Link>
-                    <img className='img-fluid like-icon' src={Like} alt="like-icon-img" />
                   </div>
                 )
               })
@@ -123,7 +124,6 @@ function Home() {
                     <Link to={"detail/" + movie.id}>
                       <img className='img-fluid movie-img' src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt="movie-images" />
                     </Link>
-                    <img className='img-fluid like-icon' src={Like} alt="like-icon-img" />
                   </div>
                 )
               })
@@ -144,7 +144,6 @@ function Home() {
                     <Link to={"detail/" + movie.id}>
                       <img className='img-fluid movie-img' src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt="movie-images" />
                     </Link>
-                    <img className='img-fluid like-icon' src={Like} alt="like-icon-img" />
                   </div>
                 )
               })

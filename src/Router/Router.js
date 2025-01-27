@@ -6,6 +6,8 @@ import Upcoming from "../Components/Upcoming";
 import Favourite from "../Components/Favourite";
 import Popular from "../Components/Popular";
 import Details from "../Components/Details";
+import Signup from "../Components/Signup";
+import Login from "../Components/Login";
 
 const Router = createBrowserRouter([
     {
@@ -35,6 +37,14 @@ const Router = createBrowserRouter([
             {
                 path: "/detail/:id",
                 element: <Details />,
+            },
+            {
+                path: "/sign-up",
+                element: <Signup />
+            },
+            {
+                path: "/login",
+                element: <Login />
             }
         ])
     }

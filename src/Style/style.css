@@ -64,11 +64,18 @@
 .movie {
     width: 25%;
     position: relative;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.movie .overview {
+    text-align: left !important;
 }
 
 .movie .movie-img {
     width: 100%;
     border-radius: 20px;
+    transition: transform 0.3s ease-in-out;
 }
 
 .movie .like-icon {
@@ -131,6 +138,14 @@
     .glass-nav {
         position: absolute;
         top: 3rem;
+        z-index: 100;
+    }
+
+    .search-user .search .search-icon {
+        width: 1.5rem;
+        position: absolute;
+        transform: translateX(-2rem);
+        top: 6.9rem;
     }
 }
 

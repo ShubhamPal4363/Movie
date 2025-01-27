@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Star from "../Assets/star.png";
+import Favourite from "../Assets/like.png";
+import Filled from "../Assets/filled-heart.png";
 import "../Style/style.css";
 
 function Details() {
@@ -10,9 +12,10 @@ function Details() {
   const [detailData, setdetailData] = useState(null);
   const [castData, setCastData] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [fav, setFav] = useState(true);
 
   useEffect(() => {
-    if (id) { // Ensure there's an 'id' before making the API call
+    if (id) {
       fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=${api}&language=en-US`)
         .then(res => res.json())
         .then(json => {
@@ -44,6 +47,11 @@ function Details() {
     return <div>Loading...</div>;
   }
 
+  function changeFav() {
+    setFav(!fav);
+    // console.log(id);
+  }
+
   return (
     <>
     <div className="backdrop-poster py-5 mt-4" style={{
@@ -67,10 +75,13 @@ function Details() {
               <li>{detailData.release_date}</li>
               <li>{detailData.genres ? detailData.genres.map(genre => genre.name).join(', ') : 'No genres available'}</li>
             </ul>
-            <div className="rating">
+            <div className="rating d-flex mb-2">
               <div className="rating-star d-flex gap-2">
                 <img className='img-fluid' src={Star} alt="star-img" />
                 <h5 className='mb-0'>{(detailData.vote_average).toFixed(1)} / 10</h5>
+              </div>
+              <div onClick={changeFav} className="favorite ms-5" style={{cursor: "pointer"}}>
+                <img className='img-fluid' src={!fav ? Filled : Favourite} alt="favourite-img" />
               </div>
             </div>
             <p>{detailData.overview}</p>

@@ -36,10 +36,12 @@ function Header() {
           </ul>
           <a className="w-100 account-link" to="#">Accounts</a>
           <ul className="navbar-nav me-auto mb-2 mb-lg-0 flex flex-column w-100">
+            <Link to="/sign-up" className='text-decoration-none'>
             <li className="nav-item d-flex gap-2 py-2">
               <img className='img-fluid' src={User} alt="user-icon" />
-              <a className="nav-link p-0" aria-current="page" to="#">ajay</a>
+              <a className="nav-link p-0 text-capitalize" aria-current="page" to="#">sign up</a>
             </li>
+            </Link>
           </ul>
         </div>
       </div>

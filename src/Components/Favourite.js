@@ -1,11 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react';
 
 function Favourite() {
+
   return (
     <>
-        <h1>Favourite</h1>
+      <h1>Favourite</h1>
     </>
-  )
+  );
 }
 
-export default Favourite
+export default Favourite;

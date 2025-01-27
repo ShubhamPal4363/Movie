@@ -28,7 +28,7 @@ function Toprated() {
           {
             movieData.length > 0 && movieData.map((movie) => {
               return (
-                <div className="movie pt-3 col-12" key={movie.id} style={{width: "32.5%"}}>
+                <div className="movie movie-popular pt-3 col-12" key={movie.id} style={{width: "27.5%"}}>
                   <Link to={"/detail/" + movie.id}>
                     <img className='img-fluid movie-img' src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt="movie-images" />
                   </Link>
