@@ -1,70 +1,136 @@
-# Getting Started with Create React App
+# Movie Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This movie website was built using **React** and integrated with the **TMDb (The Movie Database)** API. It displays various movie-related pages such as popular movies, top-rated movies, upcoming releases, movie details, and a search functionality. The app is designed to provide users with an interactive and engaging experience while exploring movies.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Popular Movies Page**: Displays a list of popular movies.
+- **Top Rated Movies Page**: Shows the top-rated movies as per user ratings.
+- **Upcoming Movies Page**: Displays movies that are set to release in the near future.
+- **Single Movie Detail Page**: Displays detailed information about a selected movie, including its title, release date, plot, and more.
+- **Search Functionality**: Allows users to search for movies by name and view their details.
 
-### `npm start`
+## Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Frontend**: React.js
+- **API**: TMDb API (The Movie Database)
+- **State Management**: React Hooks (useState, useEffect)
+- **Styling**: Bootstrap / Styled-components (or any other preferred method)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Setup
 
-### `npm test`
+### Prerequisites
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Make sure you have the following installed:
 
-### `npm run build`
+- **Node.js** (LTS version recommended)  
+  Download and install from [Node.js website](https://nodejs.org/)
+  
+- **npm** (comes with Node.js)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Installation Steps
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. **Clone the repository**:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+   ```bash
+   git clone https://github.com/your-username/movie-website.git
+   cd movie-website
+   ```
 
-### `npm run eject`
+2. **Install dependencies**:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+   Run the following command to install the required dependencies:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+   ```bash
+   npm install
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+3. **Set up your TMDb API key**:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+   - Sign up for a free account at [TMDb](https://www.themoviedb.org/).
+   - Go to your account settings, navigate to the "API" section, and generate a new API key.
+   - Create a `.env` file in the root of the project and add your API key like so:
 
-## Learn More
+     ```
+     REACT_APP_TMDB_API_KEY=your_api_key_here
+     ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+4. **Start the development server**:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+   Run the following command to start the application:
 
-### Code Splitting
+   ```bash
+   npm start
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+   The website will be available at `http://localhost:3000/`.
 
-### Analyzing the Bundle Size
+## Pages
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- **Popular Page**: Shows a list of currently popular movies using the TMDb API.
+- **Top Rated Page**: Displays movies with the highest user ratings.
+- **Upcoming Page**: Displays movies that are scheduled to be released soon.
+- **Movie Detail Page**: A detailed view of each movie with information such as description, release date, and more.
+- **Search Functionality**: Allows users to search for movies by name and see the results.
 
-### Making a Progressive Web App
+## API Endpoints Used
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- **Popular Movies**:  
+  `https://api.themoviedb.org/3/movie/popular?api_key=<YOUR_API_KEY>&language=en-US&page=1`
 
-### Advanced Configuration
+- **Top Rated Movies**:  
+  `https://api.themoviedb.org/3/movie/top_rated?api_key=<YOUR_API_KEY>&language=en-US&page=1`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- **Upcoming Movies**:  
+  `https://api.themoviedb.org/3/movie/upcoming?api_key=<YOUR_API_KEY>&language=en-US&page=1`
 
-### Deployment
+- **Search Movies**:  
+  `https://api.themoviedb.org/3/search/movie?api_key=<YOUR_API_KEY>&query=<QUERY>`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- **Movie Details**:  
+  `https://api.themoviedb.org/3/movie/<MOVIE_ID>?api_key=<YOUR_API_KEY>&language=en-US`
 
-### `npm run build` fails to minify
+## Folder Structure
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```
+/movie-website
+├── /public
+│   └── index.html
+├── /src
+│   ├── /components
+│   │   ├── Popular.js
+│   │   ├── TopRated.js
+│   │   ├── Upcoming.js
+│   │   ├── MovieDetail.js
+│   │   ├── Search.js
+│   ├── /services
+│   │   └── tmdbAPI.js
+│   ├── App.js
+│   ├── index.js
+│   ├── /assets
+│   └── /styles
+├── .env
+├── package.json
+└── README.md
+```
+
+## Additional Information
+
+- You can customize the look and feel of the website by modifying the CSS files or adding **styled-components** for more dynamic styling.
+- The search bar allows for dynamic search, so as you type, it fetches and shows the results immediately.
+- The `MovieDetail.js` component fetches and displays detailed movie data when a user clicks on a movie.
+
+## Known Issues
+
+- Ensure the API key is valid, as expired or incorrect keys will cause the app to break or not display any data.
+- Rate-limiting from TMDb might temporarily block requests if too many API calls are made in a short period.
+
+## License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+## Contact
+
+For any inquiries or suggestions, feel free to open an issue in this repository or reach out to [shubhampal9757@gmail.com].
+
+---
